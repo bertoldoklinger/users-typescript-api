@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2019",
-    "module": "ES6",
+    "module": "CommonJS",
     "rootDir": "src",
     "outDir": "./dist",
     "moduleResolution": "node",
@@ -9,5 +9,15 @@
     "strict": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "paths": {
+      "@/*": [
+        "*"
+      ]
+    },
+    "baseUrl": "src"
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
   }
 }

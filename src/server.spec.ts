@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const Person = require("./server")
+import Person from "@/index"
 
 it("should sum", () => {
   const person = new Person()

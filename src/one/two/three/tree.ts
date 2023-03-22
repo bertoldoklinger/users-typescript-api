@@ -1,6 +1,8 @@
-module.exports = class Person {
+class Tree {
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  sayMyName() {
-    return "Bertoldo"
+  log() {
+    return 3
   }
 }
+
+export default Tree
