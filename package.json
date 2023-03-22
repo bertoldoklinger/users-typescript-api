@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "start:build": "node dist/server.js",
     "start": "nodemon src/server.ts",
     "husky:prepare": "husky install",
     "test": "jest --passWithNoTests",
