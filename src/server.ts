@@ -1,1 +1,1 @@
-console.log('heelo')
+const message = 'hello'
