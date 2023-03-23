@@ -1,3 +1,4 @@
+
 import { type IGetUsersController, type IGetUsersRepository } from "./protocols";
 
 export class GetUsersController implements IGetUsersController {
