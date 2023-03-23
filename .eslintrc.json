@@ -21,5 +21,7 @@
     "plugins": [
         "@typescript-eslint"
     ],
-    "rules": {}
+    "rules": {
+        "@typescript-eslint/method-signature-style": "off"
+    }
 }
