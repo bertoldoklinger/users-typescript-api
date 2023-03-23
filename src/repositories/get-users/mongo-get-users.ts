@@ -1,5 +1,5 @@
-import { type IGetUsersRepository } from "@/controllers/users/protocols";
 import { type User } from "@/models/user";
+import { type IGetUsersRepository } from "@/protocols";
 
 export class MongoGetUsersRepository implements IGetUsersRepository {
   async getUsers(): Promise<User[]> {
