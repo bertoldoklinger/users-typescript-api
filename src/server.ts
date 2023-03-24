@@ -9,7 +9,6 @@ config()
 
 const port = process.env.PORT ?? 3450
 
-// eslint-disable-next-line @typescript-eslint/no-misused-promises
 app.get('/users', async (req, res) => {
   const getUsersRepository = new MongoGetUsersRepository()
   const getUsersController = new GetUsersController(getUsersRepository)
