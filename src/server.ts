@@ -1,23 +1,31 @@
 import { config } from 'dotenv'
 import express from 'express'
 import { GetUsersController } from './controllers/users/GetUsersController'
+import { MongoClient } from './database/mongo'
 import { MongoGetUsersRepository } from './repositories/get-users/mongo-get-users'
 
-const app = express()
+const main = async () => {
+  const app = express()
 
-config()
+  config()
 
-const port = process.env.PORT ?? 3450
+  const port = process.env.PORT ?? 3450
 
-app.get('/users', async (req, res) => {
-  const getUsersRepository = new MongoGetUsersRepository()
-  const getUsersController = new GetUsersController(getUsersRepository)
+  await MongoClient.connect()
 
-  const { body, statusCode } = await getUsersController.handle()
-  res.send(body).status(statusCode)
-})
+  app.get('/users', async (req, res) => {
+    const getUsersRepository = new MongoGetUsersRepository()
+    const getUsersController = new GetUsersController(getUsersRepository)
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`)
-})
+    const { body, statusCode } = await getUsersController.handle()
+    res.send(body).status(statusCode)
+  })
+
+  app.listen(port, () => { console.log(`Server runnin on port ${port}`); })
+}
+
+void main()
+
+
+
 
