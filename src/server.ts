@@ -21,10 +21,10 @@ const main = async () => {
     res.send(body).status(statusCode)
   })
 
-  app.listen(port, () => { console.log(`Server runnin on port ${port}`); })
+  app.listen(port, () => { console.log(`Server running on port ${port}`); })
 }
 
-void main()
+main()
 
 
 
